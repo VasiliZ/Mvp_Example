@@ -5,4 +5,5 @@
     <string name="main_activity_login_button_label">Login</string>
     <string name="main_activity_hint_user_name">Username</string>
     <string name="main_activity_password">Password</string>
+    <string name="main_activity_empty_credentials_error">User name or password is empty</string>
 </resources>

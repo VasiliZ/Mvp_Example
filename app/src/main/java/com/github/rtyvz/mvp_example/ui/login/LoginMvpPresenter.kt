@@ -1,9 +1,8 @@
 package com.github.rtyvz.mvp_example.ui.login
 
-import com.github.rtyvz.mvp_example.ui.base.MvpPresenter
-import com.github.rtyvz.mvp_example.ui.base.MvpView
+import com.github.rtyvz.mvp_example.ui.base.Contract
 
-interface LoginMvpPresenter<V : MvpView> : MvpPresenter<V> {
+interface LoginMvpPresenter<V : Contract.View> : Contract.Presenter<V> {
 
-    fun onLoginButtonClicked()
+    fun onLoginButtonClicked(userName: String, password: String)
 }

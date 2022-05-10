@@ -1,10 +1,12 @@
 package com.github.rtyvz.mvp_example.ui.base
 
-open class BasePresenter<V : MvpView> : MvpPresenter<V> {
+abstract class BasePresenter<VIEW : Contract.View> : Contract.Presenter<VIEW> {
 
-    private var view: MvpView? = null
+    private var _view: VIEW? = null
+    protected val view
+        get() = _view ?: throw Exception("view is null")
 
-    override fun onAttach(view: V) {
-        this.view = view
+    override fun onAttach(view: Contract.View) {
+        this._view = view as? VIEW ?: throw Exception("can't cast view")
     }
 }
