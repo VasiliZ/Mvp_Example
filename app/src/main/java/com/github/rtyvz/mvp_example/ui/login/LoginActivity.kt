@@ -6,13 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.github.rtyvz.mvp_example.R
 import com.google.android.material.textfield.TextInputEditText
 
-class MainActivity : AppCompatActivity(), MainMvpView {
+class LoginActivity : AppCompatActivity(), LoginMvpView {
 
     private lateinit var userNameTextField: TextInputEditText
     private lateinit var passwordTextField: TextInputEditText
     private lateinit var loginButton: Button
 
-    private var mainPresenter: MainPresenter<MainMvpView>? = null
+    private var loginPresenter: LoginPresenter<LoginMvpView>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,11 +20,11 @@ class MainActivity : AppCompatActivity(), MainMvpView {
 
         initViews()
 
-        mainPresenter = MainPresenter()
-        mainPresenter?.onAttach(this)
+        loginPresenter = LoginPresenter()
+        loginPresenter?.onAttach(this)
 
         loginButton.setOnClickListener {
-            mainPresenter?.onLoginButtonClicked()
+            loginPresenter?.onLoginButtonClicked()
         }
     }
 
