@@ -4,4 +4,9 @@
 
     <!--text size-->
     <dimen name="middle_text_size">20sp</dimen>
+
+    <!--    size-->
+    <dimen name="image_height">300dp</dimen>
+    <!--    corner radius-->
+    <dimen name="middle_corner_radius">12dp</dimen>
 </resources>
