@@ -12,7 +12,7 @@ import com.github.rtyvz.mvp_example.ui.mvvm.MvvmActivity
 class MoxyActivity : MvpAppCompatActivity(), MoxyView {
 
     @InjectPresenter
-    private lateinit var presenter: MoxyPresenter
+    lateinit var presenter: MoxyPresenter
 
     private lateinit var mvvmButton: Button
     private lateinit var mvpButton: Button
@@ -26,11 +26,11 @@ class MoxyActivity : MvpAppCompatActivity(), MoxyView {
         mvpButton = findViewById(R.id.mvpButton)
 
         mvvmButton.setOnClickListener {
-            presenter.onMvvmButtonClick()
+            presenter.onMvpButtonClick()
         }
 
         mvvmButton.setOnClickListener {
-            presenter.onMvpButtonClick()
+            presenter.onMvvmButtonClick()
         }
     }
 
