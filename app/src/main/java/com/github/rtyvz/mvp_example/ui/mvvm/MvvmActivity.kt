@@ -22,16 +22,16 @@ class MvvmActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this).get(MvvmViewModel::class.java)
 
+        mvpButton = findViewById(R.id.mvvmButton)
+        moxyButton = findViewById(R.id.moxyButton)
+
         viewModel.liveData.observe(this) {
-            if (it == 0) {
+            if (it == 2) {
                 navigateToMoxyActivity()
             } else {
                 navigateToMvpActivity()
             }
         }
-
-        mvpButton = findViewById(R.id.mvvmButton)
-        moxyButton = findViewById(R.id.moxyButton)
 
         mvpButton.setOnClickListener {
             viewModel.setLiveDataValue(1)
