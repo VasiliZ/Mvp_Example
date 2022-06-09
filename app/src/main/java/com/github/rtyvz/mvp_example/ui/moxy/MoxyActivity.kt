@@ -29,7 +29,7 @@ class MoxyActivity : MvpAppCompatActivity(), MoxyView {
             presenter.onMvpButtonClick()
         }
 
-        mvvmButton.setOnClickListener {
+        mvpButton.setOnClickListener {
             presenter.onMvvmButtonClick()
         }
     }
