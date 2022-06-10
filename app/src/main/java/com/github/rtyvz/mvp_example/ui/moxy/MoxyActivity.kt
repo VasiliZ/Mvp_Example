@@ -26,11 +26,11 @@ class MoxyActivity : MvpAppCompatActivity(), MoxyView {
         mvpButton = findViewById(R.id.mvpButton)
 
         mvvmButton.setOnClickListener {
-            presenter.onMvpButtonClick()
+            presenter.onMvvmButtonClick()
         }
 
         mvpButton.setOnClickListener {
-            presenter.onMvvmButtonClick()
+            presenter.onMvpButtonClick()
         }
     }
 

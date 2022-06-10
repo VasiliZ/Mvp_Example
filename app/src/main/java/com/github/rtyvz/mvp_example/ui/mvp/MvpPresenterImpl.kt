@@ -11,4 +11,6 @@ class MvpPresenterImpl : BasePresenter<MvpView>(), MvpPresenter<MvpView> {
     override fun onMvvmButtonClicked() {
         view.navigateToMvvmActivity()
     }
+
+
 }

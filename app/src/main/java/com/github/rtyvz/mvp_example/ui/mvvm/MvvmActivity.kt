@@ -25,20 +25,20 @@ class MvvmActivity : AppCompatActivity() {
         mvpButton = findViewById(R.id.mvvmButton)
         moxyButton = findViewById(R.id.moxyButton)
 
-        viewModel.liveData.observe(this) {
-            if (it == 2) {
-                navigateToMoxyActivity()
-            } else {
-                navigateToMvpActivity()
-            }
+        viewModel.handleMvpButtonLiveData.observe(this) {
+            navigateToMvpActivity()
+        }
+
+        viewModel.handleMoxyButtonLiveData.observe(this) {
+            navigateToMoxyActivity()
         }
 
         mvpButton.setOnClickListener {
-            viewModel.setLiveDataValue(1)
+            viewModel.onMvpButtonClicked(true)
         }
 
         moxyButton.setOnClickListener {
-            viewModel.setLiveDataValue(2)
+            viewModel.onMoxyButtonClicked(true)
         }
     }
 

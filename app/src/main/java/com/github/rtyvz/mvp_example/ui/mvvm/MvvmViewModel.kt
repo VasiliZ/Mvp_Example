@@ -5,9 +5,14 @@ import androidx.lifecycle.ViewModel
 
 class MvvmViewModel : ViewModel() {
 
-    val liveData: MutableLiveData<Int> = MutableLiveData()
+    val handleMvpButtonLiveData: MutableLiveData<Boolean> = MutableLiveData()
+    val handleMoxyButtonLiveData: MutableLiveData<Boolean> = MutableLiveData()
 
-    fun setLiveDataValue(value: Int) {
-        liveData.value = value
+    fun onMvpButtonClicked(isClicked: Boolean) {
+        handleMvpButtonLiveData.value = isClicked
+    }
+
+    fun onMoxyButtonClicked(isClicked: Boolean) {
+        handleMoxyButtonLiveData.value = isClicked
     }
 }

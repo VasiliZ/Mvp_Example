@@ -9,4 +9,8 @@ abstract class BasePresenter<VIEW : Contract.View> : Contract.Presenter<VIEW> {
     override fun onAttach(view: Contract.View) {
         this._view = view as? VIEW ?: throw Exception("can't cast view")
     }
+
+    override fun onDetach() {
+        _view = null
+    }
 }

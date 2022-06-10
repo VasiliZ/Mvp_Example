@@ -45,4 +45,10 @@ class MvpActivity : AppCompatActivity(), MvpView {
     override fun navigateToMoxyActivity() {
         startActivity(Intent(this, MoxyActivity::class.java))
     }
+
+    override fun onDestroy() {
+        loginMvpPresenterImpl?.onDetach()
+
+        super.onDestroy()
+    }
 }
